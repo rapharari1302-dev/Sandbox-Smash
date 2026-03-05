@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sandbox Smash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- authentication overlay shown before user has logged in -->
+  <div id="authOverlay" class="overlay">
+    <div class="authBox">
+      <h2>Login / Registrierung</h2>
+      <div id="loginForm">
+        <input type="text" id="username" placeholder="Benutzername">
+        <input type="password" id="password" placeholder="Passwort">
+        <button id="loginBtn">Login</button>
+        <p>Noch kein Konto? <a id="showRegister" href="#">Registrieren</a></p>
+      </div>
+      <div id="registerForm" style="display:none;">
+        <input type="text" id="regUsername" placeholder="Benutzername">
+        <input type="password" id="regPassword" placeholder="Passwort">
+        <button id="registerBtn">Registrieren</button>
+        <p>Hast du bereits ein Konto? <a id="showLogin" href="#">Login</a></p>
+      </div>
+      <p id="authMsg" class="error"></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <canvas id="game" width="1280" height="800"></canvas>
+    <button id="placeButton" class="place-btn">Platzieren (P)</button>
+    <aside class="menu">
+      <h3>Spawn-Menü</h3>
+      <div class="options">
+        <button data-type="box" class="sel">Kiste</button>
+        <button data-type="book">Buch (50 Coins)</button>
+        <button data-type="barrel">Fass (100 Coins)</button>
+        <button data-type="tree">Baum (150 Coins)</button>
+        <button data-type="car">Auto (500 Coins)</button>
+      </div>
+      <h3 style="margin-top:14px;">Waffe</h3>
+      <div class="weapon-options">
+        <button type="button" data-weapon="0" class="weapon-btn sel">Bombe 1</button>
+        <button type="button" data-weapon="1" class="weapon-btn">Bombe 2</button>
+        <button type="button" data-weapon="2" class="weapon-btn">Minigun (1000 Coins)</button>
+      </div>
+      <p class="hint">Tastatur: P = Objekt spawnen (Mausposition)<br>Linksklick auf Objekt = Bombe fällt / Minigun schießt<br>Minigun freischalten: 1000 Coins</p>
+      <div class="hud">
+        <p id="counts"></p>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
